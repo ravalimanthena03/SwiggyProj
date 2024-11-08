@@ -1,0 +1,19 @@
+<div class="p-10">
+  <!-- Section Title with Navigation Arrows -->
+  <div class="flex items-center justify-between mb-4">
+    <h2 class="text-2xl font-semibold">Order our best food options</h2>
+    <div class="flex items-center space-x-2">
+      <button (click)="scrollLeft()" class="carousel-button text-gray-500 text-2xl">&larr;</button>
+      <button (click)="scrollRight()" class="carousel-button text-gray-500 text-2xl">&rarr;</button>
+    </div>
+  </div>
+
+  <!-- Food Options Carousel -->
+  <div #carousel class="flex space-x-6 overflow-x-auto no-scrollbar">
+    <!-- Example Food Item -->
+    <div *ngFor="let item of foodItems" class="flex flex-col items-center text-center min-w-[100px]">
+      <img [src]="item.image" [alt]="item.name" class="h-20 w-21 object-cover rounded-full">
+      <p class="mt-2 text-gray-700 font-medium">{{ item.name }}</p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+.hero-section {
+    background-image: url('/assets/images/background.png'); 
+    background-size: cover;
+    background-position: center;
+    padding: 1rem 0;
+    color: white;
+  }
+  a:hover{
+    text-decoration: none;
+    color:black;
+  }
+  img{
+    height:120px;
+    width:120px;
+  }

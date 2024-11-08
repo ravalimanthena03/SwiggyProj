@@ -1,0 +1,17 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .bg-gray-100 {
+    background-color: #f7f7f7;
+  }
+  
+  .bg-gray-200 {
+    background-color: #ececec;
+  }
+  
+  .text-orange-500 {
+    color: #fc8019;
+  }
+  

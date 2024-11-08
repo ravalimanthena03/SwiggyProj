@@ -1,0 +1,61 @@
+<div class="p-8">
+    <h2 class="text-2xl font-semibold mb-4">Discover best restaurants on Dineout</h2>
+    
+    <!-- Carousel Navigation Arrows -->
+    <div class="flex justify-end space-x-2 mb-2">
+      <button (click)="scrollLeft()" class="carousel-button text-gray-500 text-2xl">&larr;</button>
+      <button (click)="scrollRight()" class="carousel-button text-gray-500 text-2xl">&rarr;</button>
+    </div>
+    
+    <!-- //Restaurant Carousel -->
+    <div #carousel class="flex space-x-4 overflow-x-auto no-scrollbar">
+      <div *ngFor="let restaurant of restaurants" class="bg-white rounded-lg shadow-md min-w-[250px] relative">
+        
+        <!-- Image and Favorite Button -->
+        <div class="relative">
+          <img 
+        [src]="restaurant.image" 
+        [alt]="restaurant.name" 
+        class="w-full h-48 object-cover rounded-t-lg cursor-pointer" 
+        (click)="navigateToRestaurant(restaurant.id)" 
+      >
+          
+          <!-- Favorite Button positioned within the image -->
+          <button 
+            (click)="toggleFavorite(restaurant)" 
+            class="absolute top-2 left-2 text-2xl" 
+            [ngClass]="isFavorite(restaurant) ? 'text-red-500' : 'text-gray-300'">
+            ♥
+          </button>
+  
+          <span class="absolute top-2 right-2 bg-black text-white text-sm font-semibold px-2 py-1 rounded-md">
+            {{ restaurant.rating }}
+          </span>
+        </div>
+  
+        <!-- Restaurant Details -->
+        <div class="p-4">
+          <h3 class="text-lg font-semibold">{{ restaurant.name }}</h3>
+          <p class="text-sm text-gray-500">{{ restaurant.cuisine }}</p>
+          <p class="text-sm text-gray-500">{{ restaurant.price }}</p>
+          <p class="text-sm text-gray-500">{{ restaurant.location }}</p>
+          <p class="text-sm text-gray-500">{{ restaurant.distance }}</p>
+        </div>
+        
+        <!-- Offers Section -->
+        <div class="bg-green-100 p-3 rounded-b-lg">
+          <div *ngFor="let offer of restaurant.offers">
+            <div class="flex items-center space-x-2 text-green-700 font-medium">
+              <span class="text-xs bg-green-600 text-white rounded px-2 py-1">
+                Flat {{ offer.discount }} off on {{ offer.type }}
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>  
+  </div>
+  
+
+
+  

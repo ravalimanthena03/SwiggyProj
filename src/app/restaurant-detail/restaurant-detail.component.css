@@ -1,0 +1,28 @@
+.carousel-button {
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 8px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+  }
+  img{
+    cursor:pointer;
+  }
+  .carousel-button:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
